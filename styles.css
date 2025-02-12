@@ -83,3 +83,73 @@ button:active {
     color: #4caf50;
     font-weight: bold;
 }
+/* Map Container */
+#map-container {
+    margin-bottom: 20px;
+}
+
+/* Node Map */
+#node-map {
+    height: 100px;
+    width: 100px;
+    max-width: 100%; /* Set max-width to 100% or remove if not needed */
+    max-height: 100%; /* This is fine if you want to limit the height */
+    background-image: url('Image/map.jpg'); /* Adjust the path if necessary */
+    background-size: cover; /* Adjust to fit the element */
+    background-position: center; /* Center the background image */
+    border-radius: 15px;
+    padding: 0; /* Set padding to 0 if you want the image to cover the entire area */
+}
+
+/* Nodes */
+circle {
+    transition: all 0.3s ease-in-out;
+}
+
+circle:hover {
+    transform: scale(1);
+}
+
+/* Quiz Container */
+#quiz-container {
+    max-width: 500px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Back to Map Button */
+#back-to-map {
+    transition: all 0.3s ease-in-out;
+}
+
+#back-to-map:hover {
+    transform: scale(1.05);
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    height: 100vh;
+    background-color: #f7fafc; /* Light background */
+}
+
+#quiz-container {
+    max-width: 600px; /* Limit the width */
+    width: 100%; /* Allow it to be responsive */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 8px;
+}
+
+svg {
+    width: 100%; /* Make SVG responsive */
+    height: auto; /* Maintain aspect ratio */
+}

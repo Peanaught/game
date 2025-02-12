@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Quiz Game</title>
+    <title>Stage-Based Quiz Game</title>
     <link href="bootstrap.css?v=1.0.1" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -11,20 +11,54 @@
 </head>
 <body class="bg-gray-100 flex justify-center items-center min-h-screen p-4">
     
-    <div class="quiz-container bg-white p-6 rounded-lg shadow-lg w-full max-w-lg">
-        <h1 class="text-2xl font-bold text-center mb-4">Quiz Game</h1>
-        
-        <form id="quiz-form">
-            <div id="question-container" class="mb-4"></div>
-            <button type="submit" class="btn btn-primary w-full">Submit</button>
-        </form>
+    <!-- Map Container -->
+    <div id="map-container" class="quiz-container bg-white p-6 rounded-lg shadow-lg w-full max-w-lg text-center">
+        <h1 class="text-2xl font-bold text-center mb-4">Quiz Game Map</h1>
+        <h2 class="text-lg font-semibold mb-4">Select a Stage to Begin</h2>
 
-        <div id="results-container" class="text-center mt-4 font-semibold"></div>
-
-        <div id="chart-container" class="hidden mt-4">
-            <canvas id="scoreChart"></canvas>
-        </div>
+        <!-- SVG Map -->
+        <svg  id="node-map"   viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet" style="width: 100%; height: auto;">
+            
+            <line x1="50" y1="150" x2="150" y2="150" stroke="#4A5568" stroke-width="2" />
+            <line x1="150" y1="150" x2="250" y2="150" stroke="#4A5568" stroke-width="2" />
+            <line x1="250" y1="150" x2="350" y2="150" stroke="#4A5568" stroke-width="2" />
+            <line x1="350" y1="150" x2="350" y2="250" stroke="#4A5568" stroke-width="2" />
+            
+            <circle id="node-1" cx="50" cy="150" r="20" fill="#4299E1" class="cursor-pointer hover:fill-blue-600 transition" />
+            <circle id="node-2" cx="150" cy="150" r="20" fill="#4299E1" class="cursor-pointer hover:fill-blue-600 transition" />
+            <circle id="node-3" cx="250" cy="150" r="20" fill="#4299E1" class="cursor-pointer hover:fill-blue-600 transition" />
+            <circle id="node-4" cx="350" cy="150" r="20" fill="#4299E1" class="cursor-pointer hover:fill-blue-600 transition" />
+            <circle id="node-5" cx="350" cy="250" r="20" fill="#4299E1" class="cursor-pointer hover:fill-blue-600 transition" />
+            
+            <text x="50" y="150" text-anchor="middle" fill="white" font-size="12" dy=".3em">1</text>
+            <text x="150" y="150" text-anchor="middle" fill="white" font-size="12" dy=".3em">2</text>
+            <text x="250" y="150" text-anchor="middle" fill="white" font-size="12" dy=".3em">3</text>
+            <text x="350" y="150" text-anchor="middle" fill="white" font-size="12" dy=".3em">4</text>
+            <text x="350" y="250" text-anchor="middle" fill="white" font-size="12" dy=".3em">5</text>
+        </svg>
     </div>
+
+<!-- Quiz Container -->
+<div id="quiz-container" class="quiz-container bg-white p-6 rounded-lg shadow-lg w-full max-w-lg hidden">
+    <h1 class="text-2xl font-bold text-center mb-4">Quiz Game</h1>
+    
+    <form id="quiz-form">
+        <div id="question-container" class="mb-4"></div>
+        <button type="submit" class="btn btn-primary w-full">Submit</button>
+    </form>
+
+    <!-- Move the "Back to Map" button outside the form -->
+    <button id="back-to-map" type="button" class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition mt-4 w-full">Back to Map</button>
+
+    <div id="results-container" class="text-center mt-4 font-semibold"></div>
+
+    <div id="chart-container" class="hidden mt-4">
+        <canvas id="scoreChart"></canvas>
+    </div>
+</div>
+
+        
+
 
     <script src="quiz.js"></script>
 </body>
