@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Quiz Game</title>
+    <link href="bootstrap.css?v=1.0.1" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css?v=1.0.1">
+</head>
+<body class="bg-gray-100 flex justify-center items-center min-h-screen p-4">
+    
+    <div class="quiz-container bg-white p-6 rounded-lg shadow-lg w-full max-w-lg">
+        <h1 class="text-2xl font-bold text-center mb-4">Quiz Game</h1>
+        
+        <form id="quiz-form">
+            <div id="question-container" class="mb-4"></div>
+            <button type="submit" class="btn btn-primary w-full">Submit</button>
+        </form>
+
+        <div id="results-container" class="text-center mt-4 font-semibold"></div>
+
+        <div id="chart-container" class="hidden mt-4">
+            <canvas id="scoreChart"></canvas>
+        </div>
+    </div>
+
+    <script src="quiz.js"></script>
+</body>
+</html>

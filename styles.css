@@ -1,0 +1,85 @@
+/* General container styling */
+.quiz-container {
+    max-width: 500px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fffbcc;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .quiz-container {
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+/* Fun font for kids */
+h1 {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 24px;
+    color: #ff6f61;
+}
+
+/* Question styling */
+.question {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Answer options */
+label {
+    display: block;
+    background: #ffcf48;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+label:hover {
+    background: #ffac33;
+    transform: scale(1.05);
+}
+
+/* Button styling */
+button {
+    background: #6a5acd;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* Hover effect */
+button:hover {
+    background: #483d8b;
+    transform: scale(1.1);
+}
+
+/* Click animation */
+button:active {
+    transform: scale(0.9);
+    transition: transform 0.1s ease-in-out;
+}
+
+/* Results container */
+#results-container {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #4caf50;
+    font-weight: bold;
+}
